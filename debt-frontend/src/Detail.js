@@ -8,8 +8,11 @@ const Detail = ()=>{
   const da = new Date(date)
   const now = new Date(Date.now())
   const dif=((now.getTime()-da.getTime())/(1000 * 60 * 60 * 24))
-  console.log(dif)
-  const interest = (amount*((dif*200)/30)) / 10000
+  console.log("dif",dif)
+  var months = (dif/30.42)
+  console.log(months,"hello")
+  console.log(amount*months*0.02)
+  const interest = (amount*months*0.02)
   console.log(dif)
   console.log(interest)
 
@@ -22,6 +25,8 @@ const Detail = ()=>{
         <div className="info">
         <div>Interest: {Math.round(interest)}</div>
         <div>Days: {Math.floor(dif)}</div>
+        <div>Months: {months.toFixed(2)}</div>
+
         </div>
 
         </div>

@@ -96,8 +96,8 @@ h5{
 
 }
 .info{
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  gap: 0.8rem;
 }
 .card:hover{
   background-color: rgb(128, 128, 128,0.3);
