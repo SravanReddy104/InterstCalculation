@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'
+
 import { getDataAsc,getDataAmountHigh,getDataAmountLow,getDataDesc } from './Features/DataSlice';
 
 const MenuItem = ({ label, action }) => {

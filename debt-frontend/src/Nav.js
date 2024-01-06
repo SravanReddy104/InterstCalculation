@@ -1,8 +1,9 @@
 import List from "./List";
 import { Link } from "react-router-dom";
-import { getDataAsc, search } from "./Features/DataSlice";
+import { search } from "./Features/DataSlice";
 import { useDispatch } from "react-redux";
 import { useRef } from "react";
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import Menu from "./Menu";
 const Nav = () => {
   const nameref = useRef();
@@ -13,15 +14,18 @@ const Nav = () => {
   };
   return (
     <div className="nav">
-      <Menu />
+      <div className="menu"> <Menu /></div>
+     
+      <div className="sidebar">
       <div className="title">
-        <h3>Users</h3>
-        <input type="text" placeholder="Enter Name to Search" ref={nameref} />
-        <button onClick={handleSearch} style={{padding:"0.5rem 0.5rem", border:"none", fontWeight:"bold", fontSize:"1rem", borderRadius:"1rem", backgroundColor:"rgb(19, 104, 233,0.8)", color:"white"}} >submit</button>
+        <h5>Users</h5>
+        <input type="text" className="small" placeholder="Search Name" ref={nameref} />
+        <button onClick={handleSearch} style={{padding:"0.1rem 0.1rem", border:"none", cursor:"pointer", fontWeight:"bold", fontSize:"0.5rem", borderRadius:"1rem", backgroundColor:"rgb(19, 104, 233,0.8)", color:"white", alignItems:"center"}} ><ArrowUpwardIcon/></button>
       </div>
       <Link to={"/addUser"} className="btnn">
         Add Users
       </Link>
+      </div>
 
       <List />
     </div>

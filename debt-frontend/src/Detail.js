@@ -19,8 +19,10 @@ const Detail = ()=>{
         <div className="name">Name: {username}</div>
         <div className="amount">Date: {da.toLocaleDateString()}</div>
         <div className="date">Amount: {amount}</div>
+        <div className="info">
         <div>Interest: {Math.round(interest)}</div>
         <div>Days: {Math.floor(dif)}</div>
+        </div>
 
         </div>
       </div>

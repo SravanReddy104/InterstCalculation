@@ -30,6 +30,7 @@ const MyForm = () => {
       setErr("Please Enter All Details")
     }
     else{
+      console.log("in formdata",formData)
           const response =  await axios.post("/sendData/",formData)
           if(response.status === 200){
             setmsg("Successfully Added")
@@ -58,7 +59,7 @@ const MyForm = () => {
         <input
           type="number"
           name="amount"
-          value={formData.password}
+          value={formData.amount}
           onChange={handleInputChange}
         />
       </div>
@@ -68,7 +69,7 @@ const MyForm = () => {
         <input
           type="date"
           name="date"
-          value={formData.password}
+          value={formData.date}
           onChange={handleInputChange}
         />
       </div>

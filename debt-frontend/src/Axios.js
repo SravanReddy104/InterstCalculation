@@ -1,5 +1,5 @@
 import axios from "axios";
 const header = axios.create({
-    baseURL:"https://sample-70095.web.app"
+    baseURL:"https://interest-calculatio1.onrender.com"
 })
 export default header;

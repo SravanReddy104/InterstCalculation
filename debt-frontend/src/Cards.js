@@ -1,9 +1,12 @@
 import "./App.css";
 import axios from "./Axios"
 import {useNavigate} from "react-router-dom"
-import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { totalAmount } from "./Features/DataSlice";
+import DeleteIcon from '@mui/icons-material/Delete';
 const Cards = ({ username, date, amount, _id }) => {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   // const [Reload,setReload] = useState(true)
   var da = new Date(date)
   const handleDelete = async()=>{
@@ -26,13 +29,13 @@ const Cards = ({ username, date, amount, _id }) => {
 console.log("id",_id)
   
   return (
-    <div style={{display:"grid", gridTemplateColumns:"80% 15%"}}>
+    <div style={{display:"grid", gridTemplateColumns:"95% 5%", alignContent:"center"}}>
       <div className="card" onClick={handelNavigate}>
       <div className="name">{username}</div>
       <div className="amount">{da.toLocaleDateString()}</div>
       <div className="date">{amount}</div>
     </div>
-     <div className="btn" onClick={handleDelete}>Delete</div>
+     <div className="btn" onClick={handleDelete}><DeleteIcon/></div>
     </div>
   );
 };

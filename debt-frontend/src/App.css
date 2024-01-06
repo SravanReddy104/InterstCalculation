@@ -12,12 +12,16 @@
 
 }
 .nav{
-
 display: flex;
-justify-content: space-around;
 width: 100%;
 height: 10vh;
 
+}
+.menu{
+  position: absolute;
+  left: 0;
+  top: 2%;
+  justify-content: flex-end;
 }
 .container {
   /* border: 3px solid green; */
@@ -26,15 +30,18 @@ height: 10vh;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 98%;
   
 }
-.title {
+.sidebar{
   display: flex;
-  gap: 1rem;
+}
+h5{
+  text-align: center;
+}
+.title {
   position: absolute;
-  top: 2%;
-  left: 35%;
+  left: 20vw;
 }
 
 .btnn{
@@ -43,7 +50,7 @@ height: 10vh;
   right: 2%;
   text-decoration: none;
   background-color: rgb(19, 104, 233);
-  padding: 0.4%;
+  padding: 0.1%;
   border-radius: 0.5rem;
   font-size: large;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -59,17 +66,18 @@ height: 10vh;
   /* background-color: black; */
 }
 .card {
+  width: 100%;
   padding: 1.5%;
   border-radius: 0.2rem;
   box-shadow: 1px  1px 1px 1px rgb(99, 79, 79,0.3);
   display: grid;
-  grid-template-columns: 20% 30% 30% ;
+  grid-template-columns: 40% 40% 20% ;
   grid-template-rows: 2;
   overflow-wrap: break-word;
   /* grid */
   cursor: pointer;
   transition: all 3ms;
-  justify-conteaaaaaaaaafnt: space-around;
+  
 
 }
 .detailCard {
@@ -95,11 +103,11 @@ height: 10vh;
   background-color: rgb(128, 128, 128,0.3);
 }
 .btn{
-  border: 2px solid orange;
-  padding: 0.4%;
+  /* border: 1px solid orange; */
+  padding: 0.2%;
   cursor: pointer;
   transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
-
+   color: red;
 }
 .btn:hover{
   transform: scaleY(1.1);  
@@ -127,7 +135,7 @@ label{
   gap: 2%;
 }
 input{
-  padding: 1rem;
+  padding: 0.5rem;
   font-size: 0.9rem;
   border: none;
   border-radius: 3rem;
@@ -160,6 +168,7 @@ input{
   margin-top: 2%;
 }
 .menu-item{
+  width: max-content;
   cursor: pointer;
 }
 .menu-container{
@@ -188,4 +197,19 @@ input{
   color: rgb(238, 229, 229);
   z-index: 99;
   background-color: rgb(73, 73, 198);
+}
+.small{
+  width: 45%;
+}
+@media only screen and (min-width: 992px) {
+  .container{
+    width: 80%;
+  }
+  .title{
+    left: 35%;
+  }
+  .small{
+    width: 80%;
+  }
+  
 }

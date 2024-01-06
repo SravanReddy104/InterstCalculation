@@ -35,30 +35,34 @@ return response.data;
 const initialState = {
   data: [],
   loading: false,
-  err:""
+  err:"",
+  total:0
+
   // status: "",
 };
  const dataSlice = createSlice({
   name: "Data",
   reducers: {
     search:(state,payload)=>{
+      console.log(payload.payload)
        
-        const newData = state.data.filter((user)=>user.username === payload.payload)
+        const newData = state.data.filter((user)=>user.username.toLowerCase().includes(payload.payload.toLowerCase()))
         console.log(newData)
         if(newData.length === 0){
           state.err="Enter Valid Name"
         }else{
           state.data = newData
+          state.err=""
         }
         // state.data = newData
         // state.loading = !state.loading
     },
     AmountLow: async (state,payload)=>{
       const response = await axios.get("/getDataNew/amount");
-      console.log("response"+response.data);
+      console.log("response in low"+response.data);
       state.data = response.data
       state.err=""
-
+      
     },
     AmountHigh: async (state,payload)=>{
       const response = await axios.get("/getDataOld/amount");
@@ -66,7 +70,13 @@ const initialState = {
       state.data = response.data
       state.data=""
 
+    },
+    totalAmount:(state,payload)=>{
+      var t = 0;
+      state.data.map((ele)=>t+=ele.amount)
+      state.total = t
     }
+    
   },
   initialState,
   extraReducers: (builder) => {
@@ -164,5 +174,5 @@ const initialState = {
     });
   },
 });
-export const {loading,status,search}= dataSlice.actions;
+export const {loading,status,search,totalAmount}= dataSlice.actions;
 export default dataSlice.reducer;
