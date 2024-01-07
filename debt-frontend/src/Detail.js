@@ -25,7 +25,7 @@ const Detail = ()=>{
         <div className="info">
         <div>Interest: {Math.round(interest)}</div>
         <div>Days: {Math.floor(dif)}</div>
-        <div>Months: {months.toFixed(2)}</div>
+        <div>Months: {months.toFixed(1)}</div>
 
         </div>
 

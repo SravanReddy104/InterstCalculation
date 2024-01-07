@@ -10,7 +10,7 @@ const Cards = ({ username, date, amount, _id }) => {
   // const [Reload,setReload] = useState(true)
   var da = new Date(date)
   const handleDelete = async()=>{
-    if(window.confirm("Do You want to delete the User")){
+    if(window.confirm(`Do You want to delete the User ${username}`)){
     const response = await axios.post("/delete",{_id})
     console.log(response.status)
     if(response.status === 200){
